@@ -1,5 +1,10 @@
-androidmvp
+androidmvvm
 ==========
+implement from now
+
+## forked from
+[antoniolg/androidmvp](https://github.com/antoniolg/androidmvp)
+
 
 MVP Android Example used to explain how to use this pattern in our Android apps. This code was created to support an article explanation:
 
