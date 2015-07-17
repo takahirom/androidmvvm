@@ -20,12 +20,14 @@ package com.antonioleiva.mvpexample.app.Login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.antonioleiva.mvpexample.app.R;
+import com.antonioleiva.mvpexample.app.databinding.ActivityLoginBinding;
 import com.antonioleiva.mvpexample.app.main.MainActivity;
 
 public class LoginActivity extends Activity implements LoginView, View.OnClickListener {
@@ -38,7 +40,7 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
         progressBar = (ProgressBar) findViewById(R.id.progress);
         username = (EditText) findViewById(R.id.username);
