@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.antonioleiva.mvpexample.app.R;
 import com.antonioleiva.mvpexample.app.databinding.ActivityLoginBinding;
@@ -42,9 +43,10 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
         super.onCreate(savedInstanceState);
         ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
-        progressBar = (ProgressBar) findViewById(R.id.progress);
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
+        progressBar = binding.progress;
+        username = binding.username;
+        password = binding.password;
+
         findViewById(R.id.button).setOnClickListener(this);
 
         presenter = new LoginPresenterImpl(this);
