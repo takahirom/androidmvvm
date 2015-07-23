@@ -1,5 +1,9 @@
 <layout>
-
+    <data>
+        <variable
+            name="viewModel"
+            type="com.antonioleiva.mvpexample.app.Login.LoginPresenterImpl" />
+    </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:layout_width="250dp"
                   android:layout_height="wrap_content"
@@ -16,6 +20,7 @@
             android:drawableLeft="@drawable/ic_action_person"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
+            addTextChangedListener="@{viewModel.usernameTextWatcher}"
             android:hint="@string/user_name"
             />
 
@@ -26,6 +31,7 @@
             android:drawableLeft="@drawable/ic_action_accounts"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
+            addTextChangedListener="@{viewModel.passwordTextWatcher}"
             android:hint="@string/password"
             android:inputType="textPassword"
             />
@@ -35,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_action_accept"
+            onClickListener="@{viewModel.buttonOnClickListener}"
             android:text="@string/log_in"
             />
 

@@ -22,21 +22,26 @@ import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 import com.antonioleiva.mvpexample.app.R;
 import com.antonioleiva.mvpexample.app.databinding.ActivityLoginBinding;
 import com.antonioleiva.mvpexample.app.main.MainActivity;
 
-public class LoginActivity extends Activity implements LoginView, View.OnClickListener {
+public class LoginActivity extends Activity implements LoginView{
 
     private ProgressBar progressBar;
     private EditText username;
     private EditText password;
     private LoginPresenter presenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +52,9 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
         username = binding.username;
         password = binding.password;
 
-        findViewById(R.id.button).setOnClickListener(this);
-
         presenter = new LoginPresenterImpl(this);
+
+        binding.setViewModel((LoginPresenterImpl) presenter);
     }
 
     @Override public void showProgress() {
@@ -73,7 +78,4 @@ public class LoginActivity extends Activity implements LoginView, View.OnClickLi
         finish();
     }
 
-    @Override public void onClick(View v) {
-        presenter.validateCredentials(username.getText().toString(), password.getText().toString());
-    }
 }
