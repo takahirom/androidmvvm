@@ -32,8 +32,8 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     private LoginView loginView;
     private LoginInteractor loginInteractor;
 
-    private ObservableField<String> username = new ObservableField<>();
-    private ObservableField<String> password = new ObservableField<>();
+    public ObservableField<String> username = new ObservableField<>();
+    public ObservableField<String> password = new ObservableField<>();
 
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
