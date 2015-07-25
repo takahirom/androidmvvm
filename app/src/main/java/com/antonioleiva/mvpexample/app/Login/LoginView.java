@@ -23,9 +23,6 @@ public interface LoginView {
 
     public void hideProgress();
 
-    public void setUsernameError();
-
-    public void setPasswordError();
 
     public void navigateToHome();
 }

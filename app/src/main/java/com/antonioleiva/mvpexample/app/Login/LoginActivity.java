@@ -38,8 +38,6 @@ import com.antonioleiva.mvpexample.app.main.MainActivity;
 public class LoginActivity extends Activity implements LoginView{
 
     private ProgressBar progressBar;
-    private EditText username;
-    private EditText password;
     private LoginPresenter presenter;
 
 
@@ -49,8 +47,6 @@ public class LoginActivity extends Activity implements LoginView{
         ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
         progressBar = binding.progress;
-        username = binding.username;
-        password = binding.password;
 
         presenter = new LoginPresenterImpl(this);
 
@@ -63,14 +59,6 @@ public class LoginActivity extends Activity implements LoginView{
 
     @Override public void hideProgress() {
         progressBar.setVisibility(View.GONE);
-    }
-
-    @Override public void setUsernameError() {
-        username.setError(getString(R.string.username_error));
-    }
-
-    @Override public void setPasswordError() {
-        password.setError(getString(R.string.password_error));
     }
 
     @Override public void navigateToHome() {

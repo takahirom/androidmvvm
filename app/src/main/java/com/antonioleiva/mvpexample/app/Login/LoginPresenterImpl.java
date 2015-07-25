@@ -18,6 +18,7 @@
 
 package com.antonioleiva.mvpexample.app.Login;
 
+import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,6 +35,8 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
 
     public String username;
     public String password;
+    public ObservableBoolean isUsernameError = new ObservableBoolean();
+    public ObservableBoolean isPasswordError = new ObservableBoolean();
 
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
@@ -46,12 +49,12 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     }
 
     @Override public void onUsernameError() {
-        loginView.setUsernameError();
+        isUsernameError.set(true);
         loginView.hideProgress();
     }
 
     @Override public void onPasswordError() {
-        loginView.setPasswordError();
+        isPasswordError.set(true);
         loginView.hideProgress();
     }
 

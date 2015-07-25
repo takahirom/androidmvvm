@@ -19,6 +19,7 @@
         <EditText
             android:id="@+id/username"
             addTextChangedListener="@{viewModel.usernameTextWatcher}"
+            error='@{viewModel.isUsernameError ? @string/username_error : null}'
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_action_person"
@@ -27,9 +28,11 @@
             android:hint="@string/user_name"
             />
 
+        <!--error='@{viewModel.isPasswordError ? "" : @string/password_error}'-->
         <EditText
             android:id="@+id/password"
             addTextChangedListener="@{viewModel.passwordTextWatcher}"
+            error='@{viewModel.isPasswordError ? @string/username_error : null}'
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_action_accounts"
