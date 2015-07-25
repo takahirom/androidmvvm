@@ -25,7 +25,6 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/user_name"
-            android:text="@{viewModel.password}"
             />
 
         <EditText
@@ -38,7 +37,6 @@
             android:gravity="center_vertical"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:text="@{viewModel.password}"
             />
 
         <Button

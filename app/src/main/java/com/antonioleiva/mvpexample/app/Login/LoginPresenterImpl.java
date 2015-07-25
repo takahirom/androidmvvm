@@ -32,8 +32,8 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     private LoginView loginView;
     private LoginInteractor loginInteractor;
 
-    public ObservableField<String> username = new ObservableField<>();
-    public ObservableField<String> password = new ObservableField<>();
+    public String username;
+    public String password;
 
     public LoginPresenterImpl(LoginView loginView) {
         this.loginView = loginView;
@@ -72,7 +72,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
 
         @Override
         public void afterTextChanged(Editable s) {
-            username.set(s.toString());
+            username = s.toString();
         }
     };
 
@@ -89,7 +89,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
 
         @Override
         public void afterTextChanged(Editable s) {
-            password.set(s.toString());
+            password = s.toString();
         }
     };
 
@@ -97,7 +97,7 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginFinishedListen
     public OnClickListener buttonOnClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            validateCredentials(username.get(), password.get());
+            validateCredentials(username, password);
         }
     };
 }
