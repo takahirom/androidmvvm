@@ -22,14 +22,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
-import android.widget.Toast;
 
 import com.antonioleiva.mvpexample.app.R;
 import com.antonioleiva.mvpexample.app.databinding.ActivityLoginBinding;
@@ -48,9 +42,9 @@ public class LoginActivity extends Activity implements LoginView{
 
         progressBar = binding.progress;
 
-        presenter = new LoginPresenterImpl(this);
+        presenter = new LoginPresenter(this);
 
-        binding.setViewModel((LoginPresenterImpl) presenter);
+        binding.setViewModel((LoginPresenter) presenter);
     }
 
     @Override public void showProgress() {

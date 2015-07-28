@@ -18,6 +18,89 @@
 
 package com.antonioleiva.mvpexample.app.Login;
 
-public interface LoginPresenter {
-    public void validateCredentials(String username, String password);
+import android.databinding.ObservableBoolean;
+import android.databinding.ObservableField;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
+
+public class LoginPresenter implements OnLoginFinishedListener {
+
+    private LoginView loginView;
+    private LoginInteractor loginInteractor;
+
+    public String username;
+    public String password;
+    public ObservableBoolean isUsernameError = new ObservableBoolean();
+    public ObservableBoolean isPasswordError = new ObservableBoolean();
+
+    public LoginPresenter(LoginView loginView) {
+        this.loginView = loginView;
+        this.loginInteractor = new LoginInteractorImpl();
+    }
+
+    public void validateCredentials(String username, String password) {
+        loginView.showProgress();
+        loginInteractor.login(username, password, this);
+    }
+
+    public void onUsernameError() {
+        isUsernameError.set(true);
+        loginView.hideProgress();
+    }
+
+    public void onPasswordError() {
+        isPasswordError.set(true);
+        loginView.hideProgress();
+    }
+
+    public void onSuccess() {
+        loginView.navigateToHome();
+    }
+
+    public TextWatcher usernameTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            username = s.toString();
+        }
+    };
+
+    public TextWatcher passwordTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            password = s.toString();
+        }
+    };
+
+
+    public OnClickListener buttonOnClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            validateCredentials(username, password);
+        }
+    };
 }
