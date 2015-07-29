@@ -35,6 +35,7 @@ public class LoginPresenter implements OnLoginFinishedListener {
 
     public String username;
     public String password;
+    public ObservableBoolean isProgressing = new ObservableBoolean();
     public ObservableBoolean isUsernameError = new ObservableBoolean();
     public ObservableBoolean isPasswordError = new ObservableBoolean();
 
