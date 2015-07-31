@@ -45,18 +45,18 @@ public class LoginPresenter implements OnLoginFinishedListener {
     }
 
     public void validateCredentials(String username, String password) {
-        loginView.showProgress();
+        isProgressing.set(true);
         loginInteractor.login(username, password, this);
     }
 
     public void onUsernameError() {
         isUsernameError.set(true);
-        loginView.hideProgress();
+        isProgressing.set(false);
     }
 
     public void onPasswordError() {
         isPasswordError.set(true);
-        loginView.hideProgress();
+        isProgressing.set(false);
     }
 
     public void onSuccess() {

@@ -47,13 +47,6 @@ public class LoginActivity extends Activity implements LoginView{
         binding.setViewModel((LoginPresenter) presenter);
     }
 
-    @Override public void showProgress() {
-        progressBar.setVisibility(View.VISIBLE);
-    }
-
-    @Override public void hideProgress() {
-        progressBar.setVisibility(View.GONE);
-    }
 
     @Override public void navigateToHome() {
         startActivity(new Intent(this, MainActivity.class));

@@ -19,9 +19,7 @@
 package com.antonioleiva.mvpexample.app.Login;
 
 public interface LoginView {
-    public void showProgress();
 
-    public void hideProgress();
 
 
     public void navigateToHome();
