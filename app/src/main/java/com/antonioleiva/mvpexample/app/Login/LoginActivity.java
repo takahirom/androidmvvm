@@ -30,21 +30,16 @@ import com.antonioleiva.mvpexample.app.databinding.ActivityLoginBinding;
 import com.antonioleiva.mvpexample.app.main.MainActivity;
 
 public class LoginActivity extends Activity implements LoginView{
-
-    private ProgressBar progressBar;
     private LoginPresenter presenter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
-        progressBar = binding.progress;
-
         presenter = new LoginPresenter(this);
 
-        binding.setViewModel((LoginPresenter) presenter);
+        binding.setViewModel(presenter);
     }
 
 
