@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2014 Antonio Leiva Gordillo.
+ *  * Copyright (C) 2015 takahirom
  *  *
  *  * Licensed under the Apache License, Version 2.0 (the "License");
  *  * you may not use this file except in compliance with the License.
@@ -16,19 +16,20 @@
  *
  */
 
-package com.antonioleiva.mvpexample.app.Login;
+package com.antonioleiva.mvpexample.app.view_model;
 
 import android.databinding.ObservableBoolean;
-import android.databinding.ObservableField;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
 
-public class LoginPresenter implements OnLoginFinishedListener {
+import com.antonioleiva.mvpexample.app.model.LoginInteractor;
+import com.antonioleiva.mvpexample.app.model.LoginInteractorImpl;
+import com.antonioleiva.mvpexample.app.view.LoginView;
+import com.antonioleiva.mvpexample.app.model.OnLoginFinishedListener;
+
+public class LoginViewModel implements OnLoginFinishedListener {
 
     private LoginView loginView;
     private LoginInteractor loginInteractor;
@@ -39,7 +40,7 @@ public class LoginPresenter implements OnLoginFinishedListener {
     public ObservableBoolean isUsernameError = new ObservableBoolean();
     public ObservableBoolean isPasswordError = new ObservableBoolean();
 
-    public LoginPresenter(LoginView loginView) {
+    public LoginViewModel(LoginView loginView) {
         this.loginView = loginView;
         this.loginInteractor = new LoginInteractorImpl();
     }
@@ -51,6 +52,7 @@ public class LoginPresenter implements OnLoginFinishedListener {
 
     public void onUsernameError() {
         isUsernameError.set(true);
+
         isProgressing.set(false);
     }
 

@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2014 Antonio Leiva Gordillo.
+ *  * Copyright (C) 2015 takahirom
  *  *
  *  * Licensed under the Apache License, Version 2.0 (the "License");
  *  * you may not use this file except in compliance with the License.
@@ -16,28 +16,26 @@
  *
  */
 
-package com.antonioleiva.mvpexample.app.Login;
+package com.antonioleiva.mvpexample.app.view;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
 
+import com.antonioleiva.mvpexample.app.view_model.LoginViewModel;
 import com.antonioleiva.mvpexample.app.R;
 import com.antonioleiva.mvpexample.app.databinding.ActivityLoginBinding;
-import com.antonioleiva.mvpexample.app.main.MainActivity;
 
-public class LoginActivity extends Activity implements LoginView{
-    private LoginPresenter presenter;
+public class LoginActivity extends Activity implements LoginView {
+    private LoginViewModel presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
-        presenter = new LoginPresenter(this);
+        presenter = new LoginViewModel(this);
 
         binding.setViewModel(presenter);
     }

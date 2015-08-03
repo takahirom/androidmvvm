@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2014 Antonio Leiva Gordillo.
+ *  * Copyright (C) 2015 takahirom
  *  *
  *  * Licensed under the Apache License, Version 2.0 (the "License");
  *  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  *
  */
 
-package com.antonioleiva.mvpexample.app.main;
+package com.antonioleiva.mvpexample.app.model;
 
 import android.os.Handler;
 
@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FindItemsInteractorImpl implements FindItemsInteractor {
-    @Override public void findItems(final OnFinishedListener listener) {
+    @Override public void findItems(final OnFindItemsFinishedListener listener) {
         new Handler().postDelayed(new Runnable() {
             @Override public void run() {
                 listener.onFinished(createArrayList());

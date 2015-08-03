@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2014 Antonio Leiva Gordillo.
+ *  * Copyright (C) 2015 takahirom
  *  *
  *  * Licensed under the Apache License, Version 2.0 (the "License");
  *  * you may not use this file except in compliance with the License.
@@ -16,17 +16,11 @@
  *
  */
 
-package com.antonioleiva.mvpexample.app.main;
+package com.antonioleiva.mvpexample.app.view;
 
-import java.util.List;
+public interface LoginView {
 
-public interface MainView {
 
-    public void showProgress();
 
-    public void hideProgress();
-
-    public void setItems(List<String> items);
-
-    public void showMessage(String message);
+    public void navigateToHome();
 }

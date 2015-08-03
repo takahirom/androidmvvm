@@ -4,7 +4,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.antonioleiva.mvpexample.app.Login.LoginPresenter"/>
+            type="com.antonioleiva.mvpexample.app.view_model.LoginViewModel"/>
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

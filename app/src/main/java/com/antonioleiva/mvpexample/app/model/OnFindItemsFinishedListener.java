@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2014 Antonio Leiva Gordillo.
+ *  * Copyright (C) 2015 takahirom
  *  *
  *  * Licensed under the Apache License, Version 2.0 (the "License");
  *  * you may not use this file except in compliance with the License.
@@ -16,9 +16,11 @@
  *
  */
 
-package com.antonioleiva.mvpexample.app.main;
+package com.antonioleiva.mvpexample.app.model;
 
-public interface FindItemsInteractor {
+import java.util.List;
 
-    public void findItems(OnFinishedListener listener);
+public interface OnFindItemsFinishedListener {
+
+    void onFinished(List<String> items);
 }
