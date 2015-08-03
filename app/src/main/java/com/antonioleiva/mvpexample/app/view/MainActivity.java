@@ -36,7 +36,7 @@ import java.util.List;
 public class MainActivity extends Activity implements MainView {
 
     private ListView listView;
-    private ProgressBar progressBar;
+
     private MainViewModel presenter;
 
     @Override
@@ -44,7 +44,6 @@ public class MainActivity extends Activity implements MainView {
         super.onCreate(savedInstanceState);
         ActivityMainBinding dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         listView = (ListView) findViewById(R.id.list);
-        progressBar = (ProgressBar) findViewById(R.id.progress);
         presenter = new MainViewModel(this);
         dataBinding.setViewModel(presenter);
 
