@@ -24,7 +24,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.antonioleiva.mvpexample.app.R;
@@ -36,7 +35,6 @@ import java.util.List;
 public class MainActivity extends Activity implements MainView {
 
     private ListView listView;
-
     private MainViewModel presenter;
 
     @Override
@@ -46,7 +44,6 @@ public class MainActivity extends Activity implements MainView {
         listView = (ListView) findViewById(R.id.list);
         presenter = new MainViewModel(this);
         dataBinding.setViewModel(presenter);
-
     }
 
     @Override
