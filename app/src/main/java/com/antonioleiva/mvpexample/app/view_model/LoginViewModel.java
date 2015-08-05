@@ -25,7 +25,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.antonioleiva.mvpexample.app.model.LoginInteractor;
-import com.antonioleiva.mvpexample.app.model.LoginInteractorImpl;
 import com.antonioleiva.mvpexample.app.view.LoginView;
 import com.antonioleiva.mvpexample.app.model.OnLoginFinishedListener;
 
@@ -42,7 +41,7 @@ public class LoginViewModel implements OnLoginFinishedListener {
 
     public LoginViewModel(LoginView loginView) {
         this.loginView = loginView;
-        this.loginInteractor = new LoginInteractorImpl();
+        this.loginInteractor = new LoginInteractor();
     }
 
     public void validateCredentials(String username, String password) {

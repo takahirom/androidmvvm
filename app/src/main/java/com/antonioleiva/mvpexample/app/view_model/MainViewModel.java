@@ -23,7 +23,6 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.antonioleiva.mvpexample.app.model.FindItemsInteractor;
-import com.antonioleiva.mvpexample.app.model.FindItemsInteractorImpl;
 import com.antonioleiva.mvpexample.app.model.OnFindItemsFinishedListener;
 import com.antonioleiva.mvpexample.app.view.MainView;
 
@@ -37,7 +36,7 @@ public class MainViewModel implements OnFindItemsFinishedListener {
 
     public MainViewModel(MainView mainView) {
         this.mainView = mainView;
-        findItemsInteractor = new FindItemsInteractorImpl();
+        findItemsInteractor = new FindItemsInteractor();
     }
 
     public void onResume() {
