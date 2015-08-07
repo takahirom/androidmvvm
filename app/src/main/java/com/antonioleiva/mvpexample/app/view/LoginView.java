@@ -20,7 +20,5 @@ package com.antonioleiva.mvpexample.app.view;
 
 public interface LoginView {
 
-
-
     public void navigateToHome();
 }

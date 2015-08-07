@@ -41,7 +41,8 @@ public class LoginActivity extends Activity implements LoginView {
     }
 
 
-    @Override public void navigateToHome() {
+    @Override
+    public void navigateToHome() {
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }

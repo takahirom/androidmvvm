@@ -44,7 +44,8 @@ public class MainViewModel implements OnFindItemsFinishedListener {
         findItemsInteractor.findItems(this);
     }
 
-    @Override public void onFinished(List<String> items) {
+    @Override
+    public void onFinished(List<String> items) {
         mainView.setItems(items);
         isProgressing.set(false);
     }
